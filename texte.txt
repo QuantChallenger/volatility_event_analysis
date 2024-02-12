@@ -1,3 +1,4 @@
 def func dumb() :
 if dumb
-print(x)
+print(dumb)
+prout
