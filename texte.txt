@@ -1,5 +1,7 @@
 def func dumb() :
 if dumb
 print(dumb2)
+else:
+print(dumb3)
 prout
 I like peanut butter
