@@ -2,3 +2,4 @@ def func dumb() :
 if dumb
 print(dumb)
 prout
+I like peanut butter
