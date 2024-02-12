@@ -1,6 +1,6 @@
 def func dumb() :
 if dumb
-print(dumb2)
+print(dumb4)
 else:
 print(dumb3)
 prout
