@@ -1,5 +1,5 @@
 # list
-def filter_names(*arg):
+def filter_names(fellowship, accepted):
   filtered_list = []
     for name in fellowship:
         if any(name.startswith(x) for x in accepted):
