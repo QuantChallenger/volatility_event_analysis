@@ -1,6 +1,6 @@
 # list
 def filter_names(*arg):
-  fellowship2 = []
+  filtered_list = []
     for name in fellowship:
         if any(name.startswith(x) for x in accepted):
             fellowship2.append(name)
