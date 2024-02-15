@@ -5,8 +5,8 @@ def filter_names(list_of_names, letter_list):
             filtered_list.append(name)
   return filtered_list
 
-list_of_names = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli', '']
+fellowship = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli', '']
 accepted = 'mnopqrstuvwxyz'
 
-result = filter_names(list_of_names, accepted)
+result = filter_names(fellowship, accepted)
 print(result)
