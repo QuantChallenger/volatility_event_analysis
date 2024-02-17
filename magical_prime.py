@@ -77,12 +77,10 @@ def find_magical_prime_index(list_magical_prime):
             if magical_sum in list_magical_prime:
                  
                  return list_magical_prime.index(magical_sum)
-             
-            elif  magical_sum != any(list_magical_prime):
-                    next
-    else:
-        return -1
-            
+
+
+    return -1
+
 
 
 
