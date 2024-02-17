@@ -10,7 +10,7 @@
 
 """
 
-# trouver edge cases (peut)
+# trouver edge cases 
 
 pas d'ordre inverse, pas de self addition, dernier chiffre inutile,
 pas d'ordre reverse,
@@ -19,7 +19,7 @@ le chiffre le plus élévé n'est jamais pris en compte dans la somme,
 minimum 3 chiffres dans la liste
 
 
-Pseudo code
+#Pseudo code
 
 
 def func
