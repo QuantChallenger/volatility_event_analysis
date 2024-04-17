@@ -1,0 +1,63 @@
+#Daily version
+import os
+import pandas as pd
+
+source = r'C:\Users\reyna\Desktop\joindaily'
+
+output_file = r'C:\Users\reyna\Desktop\fused documents\FuseddailyVar.xlsx'
+test_file = r'C:\Users\reyna\Desktop\fused documents\test.xlsx'
+
+# Initialize an empty list to store DataFrames
+dfs = []
+
+# Iterate through each file in the directory
+for filename in os.listdir(source):
+    filepath = os.path.join(source, filename)
+    if os.path.isfile(filepath) and filename.endswith('.csv'):
+        # Read the CSV file
+        data = pd.read_csv(filepath)
+        # Select only the required columns
+        selected_data = data[['Date']]
+        # Append selected data to the list of DataFrames
+        dfs.append(selected_data)
+
+concatenated_data = pd.concat(dfs, axis= 0)
+
+
+date_counts = concatenated_data['Date'].value_counts()
+
+correct_dates = date_counts[date_counts >= 30]
+correct_dates = correct_dates.sort_index(ascending = True)
+correct_dates = correct_dates.to_dict()
+key_data = list(correct_dates.keys())
+list_key = pd.DataFrame(key_data)
+list_key = list_key.rename(columns = { 0 :"date"})
+
+
+
+df2 = []
+# Iterate through each file in the directory
+for filename in os.listdir(source):
+    filepath = os.path.join(source, filename)
+    if os.path.isfile(filepath) and filename.endswith('.csv'):
+        # Read the CSV file
+        data = pd.read_csv(filepath)
+        # Select only the required columns
+        selected_data = data[['Date','Close','Volume']]
+        selected_data = selected_data.rename(columns={'Date': 'Date'})
+        selected_data = selected_data.rename(columns={'Close': 'Close' + filename[:-4]})
+        selected_data = selected_data.rename(columns={'Volume': 'Volume' + filename[:-4]})
+        # Append selected data to the list of DataFrames
+        df2.append(selected_data)
+
+#concate_data = pd.concat(df2, axis= 1)
+merged_dfs=[]
+
+for df in df2:
+    merged_df = list_key.merge(df, how= "inner", left_on ='date', right_on = 'Date')
+    merged_dfs.append(merged_df)
+
+
+final_merge = pd.concat(merged_dfs, axis= 1)
+final_merge.to_excel(output_file, index=True, header=True)
+print(final_merge)
