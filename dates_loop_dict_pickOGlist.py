@@ -7,7 +7,7 @@ Created on Tue Apr 16 13:16:17 2024
 
 #New idea pick up all the dates , find the most recurrent out of the 30 stocks, sort them datas, create a list. 
 #Then create a dict out of each csv based on date as main key [close, volume]. Then only pick up the dates
-# from your OG list in a loop and store them in a list of df, then concat them and send to excel
+# from your orignal list in a loop and store them in a list of df, then concat them and send to excel
 
 import os
 import pandas as pd
