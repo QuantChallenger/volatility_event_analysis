@@ -1,0 +1,33 @@
+I/ The OLS regression model can be represented as:
+
+𝑌𝑖=𝛽0+𝛽1𝑋𝑖+𝜀𝑖
+​
+Where:
+𝑌𝑖 is the observed value of the dependent variable.
+𝑋𝑖 is the observed value of the independent variable.
+𝛽0 and 𝛽1 are the intercept and slope coefficients, respectively.
+𝜀𝑖 is the error term.
+
+
+A.R-squared (R²):
+R-squared is always between 0 and 1.
+R-squared measures the proportion of the variance in the dependent variable that is explained by the independent variables in the model.
+A higher R-squared indicates that more variance in the dependent variable is explained by the independent variables, suggesting a better fit of the model to the data.
+However, R-squared alone doesn't determine the quality of the model. It's important to consider the context and purpose of the analysis.
+There isn't a universally agreed-upon threshold for what constitutes a "good" R-squared, but values closer to 1.0 are generally preferred.
+For example, an R-squared of 0.70 means that 70% of the variance in the dependent variable is explained by the independent variables in the model.
+Limitations of R-squared: While R-squared is a useful measure of goodness of fit,it doesn't indicate the causal relationship between the independent and dependent variables, nor does it indicate whether the model is correctly specified. 
+Additionally, R-squared can be inflated by adding more independent variables to the model, even if those variables are not truly related to the dependent variable.
+
+B.Adjusted R-squared:
+Adjusted R-squared is similar to R-squared but penalizes for the inclusion of additional independent variables in the model. It accounts for the degrees of freedom used by each independent variable.
+Adjusted R-squared is often preferred when comparing models with different numbers of predictors.
+A higher adjusted R-squared indicates a better fit of the model, similar to R-squared.
+Again, there isn't a strict threshold for what constitutes a "good" adjusted R-squared, but values closer to 1.0 are generally preferred.
+
+
+C.P-value associated with coefficients:
+The p-value associated with a coefficient indicates the probability of observing the estimated coefficient (or one more extreme) if the null hypothesis is true (i.e., if the true population coefficient is zero).
+A lower p-value suggests that the coefficient is statistically significant, meaning that it's unlikely to have occurred by chance alone.
+The conventional threshold for statistical significance is often set at 0.05 (5%). Coefficients with p-values less than 0.05 are typically considered statistically significant.
+However, the interpretation of p-values should be considered alongside other factors, such as effect size and practical significance.
